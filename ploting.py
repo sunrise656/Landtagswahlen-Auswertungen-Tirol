@@ -51,7 +51,7 @@ def create_plot(party, community):
 
     sort_data = sortdata(party, community, el_data)
 
-    if sort_data == []:
+    if sort_data == [0,0,0,0,0,0,0]:
         return "community or party not found"
     
     plot_years = [int(year[:4]) for year in election_paths]

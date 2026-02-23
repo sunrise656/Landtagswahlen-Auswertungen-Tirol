@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib as mplt
 import csv
+from pathlib import Path
 
 # Alle Daten aus den csv dateien in eine Liste einlesen
 def read_data(election_paths):
@@ -8,6 +9,7 @@ def read_data(election_paths):
     election_data = []
     for path in election_paths:
         data = []
+        path = Path(__file__).resolve().parent / path
         with open(path, "r", encoding="ISO-8859-1") as csv_file:
             reader = csv.reader(csv_file, delimiter= ";")
             for row in reader:
